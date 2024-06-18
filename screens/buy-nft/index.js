@@ -1,9 +1,8 @@
 import React from "react";
 import { Text, StyleSheet, View, Image, TouchableHighlight, ScrollView } from "react-native";
 
-const BuyNftScreen = (params) => {
-  return (
-    <ScrollView style={styles.container}>
+const BuyNftScreen = params => {
+  return <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Image source={require("./assets/back.png")} style={styles.back} />
         <Text style={styles.heading}>Buy NFT</Text>
@@ -45,13 +44,13 @@ const BuyNftScreen = (params) => {
 
       <View style={styles.feeContainer}>
         <View>
-          <Text style={[styles.mr10, { marginLeft: 15 }]}>Service fee</Text>
+          <Text style={[styles.mr10, styles.GPkvtRCL]}>Service fee</Text>
           <View style={styles.feeSection}>
             <Text>0.25 ETF</Text>
           </View>
         </View>
         <View>
-          <Text style={[styles.mr10, { marginLeft: 15 }]}>You will pay</Text>
+          <Text style={[styles.mr10, styles.oJbxlxSl]}>You will pay</Text>
           <View style={styles.feeSection}>
             <Text>3.14 ETH</Text>
           </View>
@@ -59,12 +58,11 @@ const BuyNftScreen = (params) => {
       </View>
       <View style={styles.buttonBottom}>
         <Button>Proceed</Button>
-        <Button backgroundColor="#fff" color="#000" borderWidth={1} >
+        <Button backgroundColor="#fff" color="#000" borderWidth={1}>
           Cancel
         </Button>
       </View>
-    </ScrollView>
-  );
+    </ScrollView>;
 };
 
 const styles = StyleSheet.create({
@@ -81,9 +79,22 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 40
   },
-  back: { width: 11.25, height: 20, resizeMode: "contain", marginLeft: -20 },
-  heading: { fontSize: 16, color: "#000", marginLeft: 20 },
-  subHeading: { fontSize: 16, fontWeight: "400", marginLeft: 13 },
+  back: {
+    width: 11.25,
+    height: 20,
+    resizeMode: "contain",
+    marginLeft: -20
+  },
+  heading: {
+    fontSize: 16,
+    color: "#000",
+    marginLeft: 20
+  },
+  subHeading: {
+    fontSize: 16,
+    fontWeight: "400",
+    marginLeft: 13
+  },
   totalAmount: {
     paddingHorizontal: 15,
     borderRadius: 10,
@@ -136,15 +147,30 @@ const styles = StyleSheet.create({
     backgroundColor: "#fdf1d6",
     borderRadius: 10
   },
-
-  descriptionContainer: { paddingHorizontal: 15, marginVertical: 20 },
-  descriptionText: { fontSize: 16, fontWeight: "400", marginLeft: 10 },
-  description: { fontSize: 12, marginVertical: 10, fontWeight: "500" },
+  descriptionContainer: {
+    paddingHorizontal: 15,
+    marginVertical: 20
+  },
+  descriptionText: {
+    fontSize: 16,
+    fontWeight: "400",
+    marginLeft: 10
+  },
+  description: {
+    fontSize: 12,
+    marginVertical: 10,
+    fontWeight: "500"
+  },
   mr10: {
     marginLeft: 25,
     marginBottom: 10
   },
-  feeContainer: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: 5 },
+  feeContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 5
+  },
   feeSection: {
     justifyContent: "center",
     alignItems: "flex-start",
@@ -169,7 +195,11 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 15
   },
-  WrapperText: { fontSize: 14, fontWeight: "500", color: "#313633" },
+  WrapperText: {
+    fontSize: 14,
+    fontWeight: "500",
+    color: "#313633"
+  },
   wrapperSection: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -186,29 +216,33 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     borderRadius: 10
   },
-  text: { fontSize: 14, fontWeight: "bold" }
+  text: {
+    fontSize: 14,
+    fontWeight: "bold"
+  },
+  GPkvtRCL: {
+    marginLeft: 15
+  },
+  oJbxlxSl: {
+    marginLeft: 15
+  }
 });
 
-const Button = (props) => {
-  return (
-    <TouchableHighlight onPress={props.onPress} underlayColor="#DDDDDD">
-      <View
-        style={[
-          btnStyles.button,
-          {
-            backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
-            height: props.height ? props.height : 49,
-            borderWidth: props.borderWidth ? props.borderWidth : 0,
-            borderColor: props.borderColor ? props.borderColor : "#000000"
-          }
-        ]}
-      >
-        <Text style={[btnStyles.text, { color: props.color ? props.color : "#ffffff" }]}>
+const Button = props => {
+  return <TouchableHighlight onPress={props.onPress} underlayColor="#DDDDDD">
+      <View style={[btnStyles.button, {
+      backgroundColor: props.backgroundColor ? props.backgroundColor : "#000000",
+      height: props.height ? props.height : 49,
+      borderWidth: props.borderWidth ? props.borderWidth : 0,
+      borderColor: props.borderColor ? props.borderColor : "#000000"
+    }]}>
+        <Text style={[btnStyles.text, {
+        color: props.color ? props.color : "#ffffff"
+      }]}>
           {props.children}
         </Text>
       </View>
-    </TouchableHighlight>
-  );
+    </TouchableHighlight>;
 };
 
 const btnStyles = StyleSheet.create({
@@ -225,5 +259,4 @@ const btnStyles = StyleSheet.create({
     fontSize: 15
   }
 });
-
 export default BuyNftScreen;
